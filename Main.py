@@ -5,9 +5,9 @@ from Crypto.Cipher import AES, PKCS1_OAEP
 
 
 #TODO: encrypts data
-def encrypt(data):
+def encrypt():
 
-    data.encode("utf-8")
+    data = "yo".encode("utf-8")
     file_out = open("encrypted_data.bin", "wb")
 
     recipient_key = RSA.import_key(open("receiver.pem").read())
@@ -57,6 +57,6 @@ file_out.write(public_key)
 file_out.close()
 
 
-encrypt("yo")
+encrypt()
 
 decrypt()
