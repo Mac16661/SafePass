@@ -7,7 +7,7 @@ from Crypto.Cipher import AES, PKCS1_OAEP
 #TODO: encrypts data
 def encrypt():
 
-    data = "yo".encode("utf-8")
+    
     file_out = open("encrypted_data.bin", "wb")
 
     recipient_key = RSA.import_key(open("receiver.pem").read())
@@ -57,6 +57,8 @@ file_out.write(public_key)
 file_out.close()
 
 
+#data = "yo whatsapp guys this is python".encode("utf-8")
+data = str(input("Enter email and passcode here: ")).encode("utf-8")
 encrypt()
 
 decrypt()
